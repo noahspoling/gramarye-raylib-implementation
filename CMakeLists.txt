@@ -37,6 +37,9 @@ add_library(gramarye-renderer-raylib
     ${SRC_FILES}
 )
 
+# Add include directories for clay (if available)
+# Clay headers should be provided by the parent project
+
 # Add include directories
 target_include_directories(gramarye-renderer-raylib PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

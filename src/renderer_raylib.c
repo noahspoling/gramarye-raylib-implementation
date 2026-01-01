@@ -11,7 +11,6 @@ typedef struct {
     bool camera3DInitialized;
 } RaylibRendererData;
 
-// Convert backend-agnostic WindowFlags to raylib-specific flags
 static unsigned int raylib_flags_from_window_flags(WindowFlags flags) {
     unsigned int raylibFlags = 0;
     
@@ -32,7 +31,6 @@ static unsigned int raylib_flags_from_window_flags(WindowFlags flags) {
 }
 
 static void raylib_init(Renderer* r, int width, int height, const char* title, WindowFlags flags) {
-    // SetConfigFlags must be called BEFORE InitWindow
     SetConfigFlags(raylib_flags_from_window_flags(flags));
     InitWindow(width, height, title);
     SetTargetFPS(60);
